@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block heading %} Index {% endblock %}
+
+{% block main %}
+      <br />
+      <div class="container">
+        <div class="jumbotron">
+          <h1>
+            CS50 <span class="purple">FLACK</span>
+          </h1>
+          <img class="shake" src="/static/Chat.jpg" alt="Logo" style="width:200px;height:200px;" />
+          <p>
+            Change your display name below.
+          </p>
+            <div class="form-group">
+                <input class="form-control" name="dName" placeholder="New Display Name" id="dName" type="text" autocomplete="off">
+            </div>
+            <button type="submit" class="hubber" id="hubber">Confirm Change</button>
+        </div>
+      </div>
+      <script src="{{ url_for('static', filename='cdn.js') }}"></script>
+      <script src="{{ url_for('static', filename='initial.js') }}"></script>
+{% endblock %}

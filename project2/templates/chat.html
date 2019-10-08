@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+Index
+{% endblock %}
+
+{% block main %}
+      <br />
+      <div class="container">
+        <div class="jumbotron">
+          <h1>
+            <span class="purple" id="chatName">{{ chatName }}</span>
+          </h1>
+          <img class="shake" src="/static/Chat.jpg" alt="Logo" style="width:200px;height:200px;" />
+          <h4>You are logged in as <div id="name"></div></h4>
+        </div>
+        <ul id="chats">
+          {% for chat in chats %}
+            <li>{{ chat }}</li>
+          {% endfor %}
+        </ul>
+        <div class="form-group">
+            <input class="form-control" name="chat" placeholder="Chat..." id="chat" type="text" autocomplete="off">
+        </div>
+        <button class="hubber" id="submit">Press the enter key to chat</button>
+      </div>
+      <script src="{{ url_for('static', filename='chat.js') }}"></script>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+{% endblock %}

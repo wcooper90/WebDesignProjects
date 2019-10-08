@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block heading %} Blogs {% endblock %}
+
+{% block main %}
+  <div class="container">
+    <br />
+    <h1>
+      <span class="purple">BLOGS</span>
+    </h1>
+    <button class="accordion">Mass News</button>
+    <div class="panel">
+     <p class="padded"> This is the "it be like that sometimes" section.
+       <br />
+       <button onclick="location.href='/bm'" type="button" class="hubber">Do it be like that?</button>
+     </p>
+    </div>
+
+    <button class="accordion">Sports</button>
+    <div class="panel">
+     <p class="padded">This is what you came for. (probably).
+       <br />
+       <button onclick="location.href='/bs'" type="button" class="hubber">yayy</button>
+     </p>
+    </div>
+
+    <button class="accordion">Pop</button>
+    <div class="panel">
+     <p class="padded"> I think pop is short for population so click this button to
+       eliminate the population
+       <br />
+       <button onclick="location.href='/bp'" type="button" class="hubber">
+         Eliminate</button>
+     </p>
+    </div>
+
+    <br />
+  </div>
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+{% endblock %}

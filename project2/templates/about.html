@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block heading %} About {% endblock %}
+
+{% block main %}
+  <div class="container">
+    <br />
+    <br />
+    <br />
+    <h1>
+      CS50 <span class="purple">Flack</span>
+    </h1>
+    <p class="readableText">
+      CS50 Flack is part of problem set 2 for the Harvard Extension CS33 (or something like that) class. It
+      is a site in which people can create chat channels and chat with others.
+    </p>
+    <img class="center" src="/static/CRLS2.jpg" alt="Image of CRLS" height=500>
+  </div>
+  <script src="{{ url_for('static', filename='initial.js') }}"></script>
+{% endblock %}

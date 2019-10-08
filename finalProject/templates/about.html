@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block heading %} About {% endblock %}
+
+{% block main %}
+  <div class="container">
+    <br />
+    <br />
+    <br />
+    <h1>
+      <span class="black">About</span>
+    </h1>
+    <p class="readableText">
+      CRLS-Takes is a blog based entertainment website made for CRLS students. It was created
+      in 2019 by Will Cooper as a new club for CRLS students to show creativity.
+      The website gives every student with a account the ability to post and edit blogs and
+      comment on existing content. This is moderated by the club leaders who have to approve
+      all posted content.
+    </p>
+    <h1>
+      <span class="black">FAQs</span>
+    </h1>
+    <h2>
+      <span class="purple">Why blog?</span>
+    </h2>
+    <p class="readableText">
+      Blogging is a more inclusive form of writing that will reach more people.
+      Blog writing is unlike journalistic writing as it allows for more opinion based
+      writing and has a lower standard. This combination is perfect to help include the
+      most amount of people who want to share their opinions but don’t know how or where.
+    </p>
+    <h2>
+      <span class="purple">What type of content sets CRLS Takes apart?</span>
+    </h2>
+    <p class="readableText">
+      The looser editing allows for much more entertaining and less regulated content than
+      any other club at CRLS. The timetable for editing (or the lack thereof) allows content
+      to be posted much more quickly allowing the website to stay on top of current events
+      and have fresh topics.
+    </p>
+    <h2>
+      <span class="purple">How do I post?</span>
+    </h2>
+    <p class="readableText">
+      Posting is as simple as clicking the write tab. If you have an account you will be
+      directed to a page where you can type a header and an article/spiel about any topic
+      you want. After writing, you simply press publish and it will be sent to one of the
+      head editors. They will loosely edit any glaring grammar and spelling mistakes and
+      make sure the topic is approved for the website then post it onto the site. Once it
+      is up people can rate the article and comment their opinions.
+    </p>
+    <h2>
+      <span class="purple">Do you store user data?</span>
+    </h2>
+    <p class="readableText">
+      The database only collects name, grade, and username from any user on the site. As
+      the user interacts with the site, the data collected from comments, articles, and
+      ratings will show up on their own personal page for other people on the site to see.
+    </p>
+    <div class="row">
+     <div class="column">
+       <div class="card">
+         <img src="/static/Will.jpg" alt="Will" style="width:100%">
+         <div class="cont4iner">
+           <h2>Will Cooper</h2>
+           <p class="title">Founder; Absolute Clown</p>
+           <p>Wavy</p>
+           <p>example@example.com</p>
+           <p><button class="aboutMe">Contact</button></p>
+         </div>
+       </div>
+     </div>
+    </div>
+    <img src="/static/CRLS2.jpg" alt="Image of CRLS" height=500>
+  </div>
+{% endblock %}

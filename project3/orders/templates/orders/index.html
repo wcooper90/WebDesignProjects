@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block heading %} User {% endblock %}
+
+{% block main %}
+  <div class="container" id="name">
+    Welcome, {{ user.username }}
+  </div>
+  <script src="../../static/home.js"></script>
+{% endblock %}

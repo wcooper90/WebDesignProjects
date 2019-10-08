@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block heading %} Takes {% endblock %}
+
+{% block main %}
+  <div class="container">
+    <br />
+    <div class="jumbotron">
+      <h1>
+        <span class="purple">{{ type }}</span>
+      </h1>
+      </div>
+    <br />
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Date Posted</th>
+          <th scope="col">Blog Page</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for blog in blogs %}
+            <tr>
+              <td>{{ blog[4] }}</td>
+              <td>{{ blog[2] }}</td>
+              <td>{{ blog[3] }}</td>
+              <td><button onclick="location.href='/blogs/{{ blog[1] }}'" type="button" class="hubber">
+                {{ blog[4] }}</button></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br />
+  </div>
+{% endblock %}

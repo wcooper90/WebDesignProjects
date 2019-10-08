@@ -1,0 +1,45 @@
+$color-purple: #BA55D3;
+
+%nice-text {
+  text-align:center;
+  font-size: 40px;
+}
+
+button.dropbtn {
+  background-color: $color-purple;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+span.purple {
+  color:$color-purple;
+}
+
+img {
+  padding-bottom: 50px;
+}
+
+h1 {
+  @extend %nice-text;
+  text-align: center;
+  font-size: 80px;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+}
+
+p.readableText {
+  @extend %nice-text;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+span.silver {
+  color: #C9D0CE; }

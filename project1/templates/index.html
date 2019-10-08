@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block heading %} Index {% endblock %}
+
+{% block main %}
+      <br />
+      <div class="container">
+        <div class="jumbotron">
+          <h1>
+            CS50 <span class="purple">BOOKS</span>
+          </h1>
+          <img class="shake" src="/static/LOGO.ico" alt="Logo" style="width:200px;height:200px;" />
+          <p>
+            Because you should read more and this website will help you find better books. You're welcome.
+          </p>
+        </div>
+        <button class="accordion">Why CS50 Books</button>
+        <div class="panel">
+         <p class="padded">Because books are fun. Find out more on the "about" page.
+           <br />
+           <button onclick="location.href='/about'" type="button" class="hubber">
+             About</button>
+         </p>
+        </div>
+
+        <button class="accordion">Books</button>
+        <div class="panel">
+         <p class="padded">Looking for a good book? Begin your search!
+           <br />
+           <button onclick="location.href='/search'" type="button" class="hubber">
+             Take me there</button>
+         </p>
+        </div>
+
+        <button class="accordion">Getting Started with an Account</button>
+        <div class="panel">
+         <p class="padded">New to the site? Get started with a new account by clicking the button below.
+           <br />
+          <button onclick="location.href='/register'" type="button" class="hubber">
+            Register</button>
+         </p>
+        </div>
+        <br />
+        <img class="center" src="/static/CRLS1.jpeg" alt="Image of CRLS" style="width:1100px;height:850px;" />
+      </div>
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+          });
+        }
+      </script>
+{% endblock %}

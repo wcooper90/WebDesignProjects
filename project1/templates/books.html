@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block heading %} Index {% endblock %}
+
+{% block main %}
+      <br />
+      <div class="container">
+        <div class="jumbotron">
+          <h1>
+            <span class="purple">{{ info[0] }}</span>
+          </h1>
+          <img class="shake" src="/static/LOGO.ico" alt="Logo" style="width:200px;height:200px;" />
+          <p>
+            ISBN: {{ info[1] }} <br />
+            Author: {{ info[2] }} <br />
+            Year Published: {{ info[3] }}<br />
+            Average Rating on goodreads: {{ avgRate }}<br />
+            Number of Ratings from goodreads: {{ numG }}<br />
+            <a href="{{ link }}">API link</a>
+          </p>
+        </div>
+        <div class="container h-100">
+          <h1>
+            <span class="purple">Reviews</span>
+          </h1>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Review</th>
+                <th scope="col">Rating</th>
+                <th scope="col">User</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for review in reviews %}
+                  <tr>
+                    <td>{{ review[2] }}</td>
+                    <td>{{ review[4] }}</td>
+                    <td>{{ review[3] }}</td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% if session.user_id %}
+          <form action="/books/{{ info[1] }}" method="post">
+            <p class="readableText">
+              Click below to leave a review!
+            </p>
+              <textarea class="form-control" id="exampleFormControlTextarea1" name="review" rows="3"></textarea><br />
+              <label class="radio">1
+                <input type="radio" name="rating" value="1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio">2
+                <input type="radio" name="rating" value="2">
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio">3
+                <input type="radio" name="rating" value="3">
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio">4
+                <input type="radio" name="rating" value="4">
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio">5
+                <input type="radio" name="rating" value="5">
+                <span class="checkmark"></span>
+              </label>
+              <button class="hubber" type="submit">Submit!</button>
+          </form>
+        {% endif %}
+      </div>
+
+{% endblock %}

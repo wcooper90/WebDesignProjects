@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block heading %} Index {% endblock %}
+
+{% block main %}
+      <br />
+      <div class="container">
+        <div class="jumbotron">
+          <h1>
+            Welcome, <span class="purple" id="dName"></span>
+          </h1>
+          <img class="shake" src="/static/Chat.jpg" alt="Logo" style="width:200px;height:200px;" />
+          <p>
+            Existing Chat Rooms
+          </p>
+          <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Room Name</th>
+              <th scope="col">Let's Go!</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for channel in channels %}
+                <tr>
+                  <td>{{ channel }}</td>
+                  <td><button onclick="location.href='/chat/{{ channel }}'" type="button" class="hubber">
+                    {{ channel }}</button></td>
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="a">
+
+        </div>
+      <script src="{{ url_for('static', filename= 'channels.js') }}"></script>
+      
+{% endblock %}

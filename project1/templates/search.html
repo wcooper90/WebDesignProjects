@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block heading %} Index {% endblock %}
+
+{% block main %}
+      <br />
+      <div class="container">
+        <div class="jumbotron">
+          <h1>
+            CS50 <span class="purple">BOOKS</span>
+          </h1>
+          <img class="shake" src="/static/LOGO.ico" alt="Logo" style="width:200px;height:200px;" />
+          <p>
+            Because you should read more and this website will help you find better books. You're welcome.
+          </p>
+        </div>
+        <div class="container h-100">
+          <form action="/search" method="post">
+            <div class="d-flex justify-content-center h-100">
+              <div class="searchbar">
+                <input class="search_input" type="text" name="search" placeholder="Type keywords here...">
+                <button class="search_icon" type="submit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        {% if returned %}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">isbn</th>
+              <th scope="col">Author</th>
+              <th scope="col">Year Published</th>
+              <th scope="col">Book Page</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for return in returned %}
+              {% for retur in return %}
+                <tr>
+                  <td>{{ retur[0] }}</td>
+                  <td>{{ retur[1] }}</td>
+                  <td>{{ retur[2] }}</td>
+                  <td>{{ retur[3] }}</td>
+                  <td><button onclick="location.href='/books/{{ retur[1] }}'" type="button" class="hubber">
+                    {{ retur[0] }}</button></td>
+                </tr>
+              {% endfor %}
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+      {% if matches == 1 %}
+      <p class="readableText">
+        Sorry, looks like there are no matches
+      </p>
+      {% endif %}
+      </div>
+
+{% endblock %}

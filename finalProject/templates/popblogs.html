@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block heading %} About {% endblock %}
+
+{% block main %}
+<div class="container">
+  <br />
+  <h1>
+    <span class="purple">POP BLOGS</span>
+  </h1>
+    <div class="row">
+     <div class="column">
+       <div class="card">
+         <!-- input dynamic URLs and alts, from the write page -->
+         <img src="/static/Will.jpg" alt="Will" style="width:100%">
+         <div class="cont4iner">
+           <!-- input dynamic titles, snippets, from the write page -->
+           <h2>Will Cooper</h2>
+           <p class="title">CEO &amp; Founder</p>
+           <p>Wavy</p>
+           <p>example@example.com</p>
+           <p><button class="aboutMe">Read More</button></p>
+         </div>
+       </div>
+     </div>
+     <div class="column">
+       <div class="card">
+         <img src="/static/Max.jpg" alt="Max" style="width:100%">
+         <div class="cont4iner">
+           <h2>Max Davis</h2>
+           <p class="title">Art Director</p>
+           <p>Tight</p>
+           <p>example@example.com</p>
+           <p><button class="aboutMe">Contact</button></p>
+         </div>
+       </div>
+     </div>
+     <div class="column">
+       <div class="card">
+         <img src="/static/Albert.jpg" alt="Albert" style="width:100%" />
+         <div class="cont4iner">
+           <h2>Albert Liu</h2>
+           <p class="title">Poo Poo</p>
+           <p>Wack</p>
+           <p>example@example.com</p>
+           <p><button class="aboutMe">Contact</button></p>
+         </div>
+       </div>
+     </div>
+    </div>
+    <img src="/static/CRLS2.jpg" alt="Image of CRLS" height=500>
+  </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block heading %} Takes {% endblock %}
+
+{% block main %}
+  <div class="container">
+    <br />
+    <h1 class="center">
+      <span class="purple">{{ type }}</span> TAKES
+    </h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Take</th>
+          <th scope="col">Date Posted</th>
+          <th scope="col">Author</th>
+          <th scope="col">Take Page</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for take in takes %}
+            <tr>
+              <td>{{ take[0] }}</td>
+              <td>{{ take[2] }}</td>
+              <td>{{ take[1] }}</td>
+              <td><button onclick="location.href='/takes/{{ take[3] }}'" type="button" class="hubber">
+                Take</button></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br />
+  </div>
+{% endblock %}
